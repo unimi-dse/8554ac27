@@ -217,7 +217,7 @@ completefunc <- function(){
 #' @import shiny ggplot2
 #' @examples
 shinyapp_asr <- function(server,ui){
-  data <- read.csv("DATAR.csv",skip = 0, sep=',')
+  data <- read.csv(system.file("extdata","DATAR.csv",package= "FFP"))
   tab <- frmtb(data,c('30/06/2016','30/06/2017','30/06/2018'))
   RR_RE <- rel_var(tab,c(2,3,5,6,7,10,12,13,14,15))
   server <- function(input,output) {
